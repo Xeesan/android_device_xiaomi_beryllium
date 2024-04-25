@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages \
@@ -173,13 +177,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.perfcapture=1 \
     vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,co.aospa.sense
 
-# Charger
-PRODUCT_PACKAGES += \
-    libsuspend
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.charger.enable_suspend=true
-
 # Chipset
 PRODUCT_VENDOR_PROPERTIES += \
     ro.soc.model=SDM845
@@ -295,9 +292,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl:64 \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health-service.qti \
+    android.hardware.health-service.qti_recovery
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -328,10 +324,6 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0.vendor
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_beryllium
 
 # Listen
 PRODUCT_VENDOR_PROPERTIES += \
@@ -460,6 +452,10 @@ PRODUCT_COPY_FILES += \
 # Platform
 TARGET_BOARD_PLATFORM := sdm845
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.xiaomi_beryllium
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor
@@ -521,6 +517,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
