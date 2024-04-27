@@ -454,7 +454,7 @@ TARGET_BOARD_PLATFORM := sdm845
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_beryllium
+    android.hardware.lights-service.xiaomi_sdm845
 
 # Power
 PRODUCT_PACKAGES += \
